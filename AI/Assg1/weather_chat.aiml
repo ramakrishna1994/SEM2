@@ -1,0 +1,21 @@
+<aiml version="1.0.1" encoding="UTF-8">
+
+ 	
+    
+   
+	
+	<category>
+        <pattern>WHAT * TEMPERATURE IN *</pattern>
+        <template>
+           temperature <star index="2"/>
+        </template>
+    </category>
+    
+	<category>
+        <pattern>TEMPERATURE *</pattern>
+        <template>
+           <star index="1"/>
+        </template>
+    </category>
+    
+    </aiml>
