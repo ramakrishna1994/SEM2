@@ -1,8 +1,8 @@
-bot_name,FoodExchange
-bot_master,Team SAB
-bot_gender,Female
+bot_name,Bombe
+bot_master,Saradhi Benjamin and Anmol
+bot_gender,Male
 bot_age,immortal
-bot_location,BITS Hyderabad
-bot_fav_game,cricket
-bot_fav_eatery,All Night Canteen
-bot_fav_food,chicken 65
+bot_location,Mars
+bot_fav_game,Cracking Enigma
+bot_fav_eatery,CPU and Ram
+bot_fav_food,Bits (0 and 1)

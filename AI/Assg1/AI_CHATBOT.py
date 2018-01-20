@@ -1,3 +1,13 @@
+'''
+    Authors : Avinesh Benjamin     (2017H1030080H)
+              Saradhi Ramakrishna  (2017H1030081H)
+              Anmol Dayal Dhiman   (2017H1030087H)
+              
+    Description : Below is the Python code for Artificially Intelligent
+                    Chat Bot which answers questions about Bits-Pilani Hyderabad Campus
+                    eateries, weather information and cricket scores.
+'''
+
 #!/usr/bin/python
 import requests
 import aiml
@@ -76,26 +86,33 @@ def printweather(answer):
         return 'Can you be a bit more specific!! I am not able to find city name'
     
 def printcricketscores():
+    answer = []
     for match in matches:    
         data = json.loads(json.dumps(c.livescore(match['id'])))
-        print data['matchinfo']['mchdesc'] + ' (' + data['matchinfo']['status'] +')' + ' (' + data['matchinfo']['srs'] +')'
+        
+        temp = str(data['matchinfo']['mchdesc']) + ' (' + str(data['matchinfo']['status']) +')' + ' (' + str(data['matchinfo']['srs']) +')'
+        answer.append(temp)
         if data['matchinfo']['mchstate'] != 'preview' :  
-            print data['batting']['team'] + ' -- ' + data['batting']['score'][0]['runs'] + '/' + data['batting']['score'][0]['wickets'] + ' (' + data['batting']['score'][0]['overs'] + ')'
-            print data['bowling']['team'] + ' -- ' + data['bowling']['score'][0]['runs'] + '/' + data['bowling']['score'][0]['wickets'] + ' (' + data['bowling']['score'][0]['overs'] + ')'
-        print '--------------------'
+            temp = str(data['batting']['team']) + ' -- ' + str(data['batting']['score'][0]['runs']) + '/' + str(data['batting']['score'][0]['wickets']) + ' (' + str(data['batting']['score'][0]['overs']) + ')'
+            answer.append(temp)
+            temp = str(data['bowling']['team']) + ' -- ' + str(data['bowling']['score'][0]['runs']) + '/' + str(data['bowling']['score'][0]['wickets']) + ' (' + str(data['bowling']['score'][0]['overs']) + ')'
+            answer.append(temp)
+        temp = '--------------------'
+        answer.append(temp)
+    return answer
     
 # Create the kernel and learn AIML files
 kernel = aiml.Kernel()
 if os.path.isfile("bot_brain.brn"):
     kernel.bootstrap(brainFile = "bot_brain.brn")
 else:
-    kernel.bootstrap(learnFiles = "std-startup.xml", commands = "reload")
+    kernel.bootstrap(learnFiles = "startup.xml", commands = "reload")
     kernel.saveBrain("bot_brain.brn")
 
 '''
 DB connect code
 '''
-con = sqlite3.connect("test.db")
+con = sqlite3.connect("AI.db")
 cursor = con.cursor()
 
 while True:
@@ -124,11 +141,17 @@ while True:
                     print "BOT(ANSWER)     >> " + bot_output
                 elif "cricket" in answer:
                     print "BOT(ANSWER)     >> Below are the cricket scores!!"
-                    bot_output = printcricketscores() 
+                    line = printcricketscores() 
+                    bot_output = ""
+                    for l in line:
+                        bot_output += l + "\n"
+                    print bot_output
                 elif answer == "":
+                    bot_output = ""
                     continue
                 else:
                     print "BOT(ANSWER)     >> " + answer
+                    bot_output = answer
                 cursor.execute("INSERT INTO AI VALUES(?, ?, ?)", [sid, query, bot_output])
                 con.commit()
                 

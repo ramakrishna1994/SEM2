@@ -1,9 +1,115 @@
 <?xml version="1.0" encoding="ISO-8859-15"?>
 
+
 <aiml>
-<!--author: anmol-->
-<!--licence: Standard-->
-<!--created with: GaitoBot AIML Editor V2.10.0.42867-->
+
+<category>
+	<pattern>HI MY NAME IS *</pattern>
+	<template>hi <set name="username"><star /></set> how are you?</template>
+</category>
+<category>
+	<pattern>I AM FINE </pattern>
+	<template>
+		<random>
+			<li>good to know that</li>
+			<li>nice to hear it</li>
+			<li>great . how may i help you then?</li>
+		</random></template>
+</category>
+<category>
+	<pattern>TELL ME ABOUT *</pattern>
+	<template>
+		<random>
+			<li>WHAT DO YOU ABOUT <star /></li>
+			<li>YES I CAN TELL YOU . WHAT EXACTLY YOU WANT TO KNOW</li>
+			<li><star /> EXACTLY WHAT</li>
+			<li>WHY ARE YOU ASKING THAT</li>
+		</random></template>
+</category>
+<category>
+	<pattern>I AM NOT *</pattern>
+	<template>
+		<random>
+			<li>WHY ARENT YOU <star /></li>
+			<li>ARE YOU SAYING THAT YOU ARE NOT FEELING <star /></li>
+		</random></template>
+</category>
+<category>
+	<pattern>YES</pattern>
+	<template>
+		<random>
+			<li>OKAY</li>
+			<li>THATS GOOD</li>
+		</random></template>
+</category>
+<category>
+	<pattern>NO</pattern>
+	<template>
+		<random>
+			<li>OKAY</li>
+			<li>THATS GOOD</li>
+		</random></template>
+</category>
+
+
+<category>
+	<pattern>NO I AM NOT *</pattern>
+	<template><random>
+			<li>WHY ARENT YOU <star /></li>
+			<li>ARE YOU SAYING THAT YOU ARE NOT FEELING <star /></li>
+		</random></template>
+</category>
+<category>
+	<pattern>NO I DONT WANT</pattern>
+	<template>
+		<random>
+			<li>THEN LETS CHANGE THE TOPIC</li>
+			<li>WHY WHAT HAPPENNED</li>
+			<li>OKAY NO PROBLEM</li>
+		</random></template>
+</category>
+<category>
+	<pattern></pattern>
+	<template></template>
+</category>
+<category>
+	<pattern>HI </pattern>
+	<template></template>
+</category>
+<category>
+	<pattern>* EATERIES IN BITS HYDERABAD</pattern>
+	<template>THERE ARE 2 MESSES , 2 BITS N BYTES , 1 YUMPYS AND A SUPER MARKET. WHAT DO YOU WANT TO KNOW</template>
+</category>
+<category>
+	<pattern>WHAT SHALL I EAT</pattern>
+	<template>
+		<random>
+			<li>WHAT DO YOU WANT TO EAT?</li>
+			<li>WHATS YOUR FAVOURITE DISH</li>
+			<li>YOU SHOULD EAT FOOD :p</li>
+		</random></template>
+</category>
+<category>
+	<pattern>I LIKE *</pattern>
+	<template><srai><star /></srai></template>
+</category>
+<category>
+	<pattern>CHOCOLATE</pattern>
+	<template>WOW I ALSO LIKE IT .. BUTS HAS LOT OF CALORIES AND NOT GOOD FOR TEETHS
+		<random>
+			<li>WOW I ALSO LIKE IT , BUT HAS LOTS OF CALORIES</li>
+			<li>I TOO LOVE CHOCOLATES</li>
+			<li>IF YOU ARE HUNGRY YOU SHOULD GO FOR GOOD FOOD</li>
+		</random></template>
+</category>
+<category>
+	<pattern></pattern>
+	<template></template>
+</category>
+<category>
+	<pattern>HI  MY NAME IS *</pattern>
+	<template><srai>my name is <star /></srai></template>
+</category>
 <category>
 	<pattern> CAFETERIA</pattern>
 	<template> tea coffee and snacks .. lunc is also availbale</template>
@@ -53,12 +159,8 @@
 	<template>morning 7 to 9 30 am in mess</template>
 </category>
 <category>
-	<pattern>* EATERIES IN BITS</pattern>
-	<template><srai>where you find food in bits</srai></template>
-</category>
-<category>
 	<pattern>* FOOD IN BITS </pattern>
-	<template><srai>where you find food in bits campus</srai></template>
+	<template><srai>where can i find food in bits campus</srai></template>
 </category>
 <category>
 	<pattern>* LEARN IN BITS *</pattern>
@@ -71,6 +173,10 @@
 <category>
 	<pattern>* LUNCH *</pattern>
 	<template>lunch is served at 1130 am to 2 pm in mess</template>
+</category>
+<category>
+	<pattern>* MY NAME</pattern>
+	<template><srai>repeat my name</srai></template>
 </category>
 <category>
 	<pattern>* OF BITS N BYTES</pattern>
@@ -107,11 +213,11 @@
 </category>
 <category>
 	<pattern>BITS N BYTES</pattern>
-	<template>we get puffs rolls , pizzas , cakes , donuts </template>
+	<template><srai>where is bits n bytes present</srai></template>
 </category>
 <category>
-	<pattern>BITS N BYTES</pattern>
-	<template><srai>where is bits n bytes present</srai></template>
+	<pattern>IN BITS N BYTES</pattern>
+	<template>we get puffs rolls , pizzas , cakes , donuts </template>
 </category>
 <category>
 	<pattern>BITS STARTED</pattern>
@@ -126,12 +232,15 @@
 	<template>you will get both north and south indian food . you will also get tea and coffee</template>
 </category>
 <category>
-	<pattern>C3</pattern>
-	<template>its a eatery .it is near girls hostel</template>
+	<pattern>BYE * </pattern>
+	<template>
+		<random>
+			<li>BYE <get name="username" /></li>
+		</random></template>
 </category>
 <category>
-	<pattern>C3 </pattern>
-	<template> tea coffe and varoius snacks such as pasteries sanddwiches </template>
+	<pattern>C3</pattern>
+	<template>its a eatery .it is near girls hostel</template>
 </category>
 <category>
 	<pattern>CAPITAL OF INDIA </pattern>
@@ -142,7 +251,7 @@
 	<template>Hyderabad</template>
 </category>
 <category>
-	<pattern>CHITRANJAN HOTA</pattern>
+	<pattern>WHO IS CHITTRANJAN HOTA</pattern>
 	<template>faculty of comp science , teaching us Artificial intelligence</template>
 </category>
 <category>
@@ -178,12 +287,24 @@
 	<template><star /></template>
 </category>
 <category>
+	<pattern>DO YOU KNOW ANY *</pattern>
+	<template><srai><star /></srai></template>
+</category>
+<category>
 	<pattern>DO YOU THINK *</pattern>
 	<template><srai><star /></srai></template>
 </category>
 <category>
 	<pattern>DOSA IN BITS</pattern>
 	<template>cafeteria ,mess </template>
+</category>
+<category>
+	<pattern>EATERIES IN BITS</pattern>
+	<template><srai>where can i  find food in bits campus</srai></template>
+</category>
+<category>
+	<pattern>EATERIES IN BITS HYDERABAD</pattern>
+	<template>i can let you KNOW some</template>
 </category>
 <category>
 	<pattern>FOUNDER CHAIRMAN OF BITS</pattern>
@@ -199,7 +320,8 @@
 </category>
 <category>
 	<pattern>HI</pattern>
-	<template>Hello.. Nice to Meet you://loadstart.biz/search</template>
+	<template>
+		hello</template>
 </category>
 <category>
 	<pattern>HI *</pattern>
@@ -238,16 +360,20 @@
 	<template>there is accademic block , boys and girls hostels cannaught place  mdedical and various sports field </template>
 </category>
 <category>
-	<pattern>MORE</pattern>
-	<template>Super market in caunaught place.</template>
+	<pattern>IN C3 </pattern>
+	<template> tea coffe and varoius snacks such as pasteries sanddwiches </template>
 </category>
 <category>
 	<pattern>MORE </pattern>
-	<template>you will find processed foods ,raw vegtables and  daily use items </template>
+	<template>Supermarket in connaught place you will find processed foods ,raw vegtables and  daily use items </template>
 </category>
 <category>
 	<pattern>MY NAME IS *</pattern>
-	<template>YOU HAVE A NICE NAME <set name="username"><star /></set>. </template>
+	<template>
+		<random>
+			<li>you have a nice name <set name="username"><star /></set></li>
+			<li>hi <set name="username"><star /></set>, nice to meet you</li>
+		</random> </template>
 </category>
 <category>
 	<pattern>NIGHT CANTEEN</pattern>
@@ -282,7 +408,7 @@
 	<template><srai><star /></srai></template>
 </category>
 <category>
-	<pattern>VICE CHANCELLOR</pattern>
+	<pattern>WHO IS VICE CHANCELLOR OF BITS HYDERABAD</pattern>
 	<template>Prof. Souvik Bhattacharyya is the VC . his contact details are  vc@pilani.bits-pilani.ac.in</template>
 </category>
 <category>
@@ -351,11 +477,31 @@
 </category>
 <category>
 	<pattern>WHAT IS YOUR NAME</pattern>
-	<template>MY NAME IS SAHAYAK .. WHAT IS YOUR NAME?</template>
+	<template>MY NAME IS <bot name="bot_name"/>... WHAT IS YOUR NAME?</template>
 </category>
 <category>
 	<pattern>WHAT ITEMS WE GET IN NIGHT CANTEEN </pattern>
 	<template>various dosas and rice items  , fruit jiuces and ice cream  </template>
+</category>
+<category>
+	<pattern>WHAT WOULD YOU GET IN *</pattern>
+	<template><srai><star /></srai></template>
+</category>
+<category>
+	<pattern>WHERE CAN I FIND FOOD IN BITS CAMPUS </pattern>
+	<template>there are 2 mess . apart from that bits n bytes and yumpys , a cafeteria in academic block and C3 near girls hostel</template>
+</category>
+<category>
+	<pattern>WHERE CAN I GET *</pattern>
+	<template><srai><star /></srai></template>
+</category>
+<category>
+	<pattern>WHERE I CAN FIND *</pattern>
+	<template><srai><star /></srai></template>
+</category>
+<category>
+	<pattern>WHERE I FIND *</pattern>
+	<template><srai><star /></srai></template>
 </category>
 <category>
 	<pattern>WHERE IS  BPHC LOCATED</pattern>
@@ -371,19 +517,15 @@
 </category>
 <category>
 	<pattern>WHERE IS BITS N BYTES PRESENT</pattern>
-	<template>it is present in two location , near footfield and one in cannaught place</template>
+	<template>it is present in two location , near footballfield and one in cannaught place</template>
 </category>
 <category>
-	<pattern>WHERE WILL YOU FIND *</pattern>
+	<pattern>WHERE WILL I GET *</pattern>
 	<template><srai><star /></srai></template>
 </category>
 <category>
-	<pattern>WHERE WILL YOU GET *</pattern>
-	<template><srai><star /></srai></template>
-</category>
-<category>
-	<pattern>WHERE YOU FIND FOOD IN BITS CAMPUS </pattern>
-	<template>there are 2 mess . apart from that bits n bytes and yumpys , a cafeteria in academic block and C3 near girls hostel</template>
+	<pattern>WHO AM I</pattern>
+	<template><srai>repeat my name</srai></template>
 </category>
 <category>
 	<pattern>WHO IS *</pattern>
@@ -404,5 +546,14 @@
 <category>
 	<pattern>WOULD YOU MIND *</pattern>
 	<template><srai><star /></srai></template>
+</category>
+<category>
+	<pattern>BYE</pattern>
+	<template>
+		<random>
+			<li>bye <get name="username" /></li>
+			<li>okay <get name="username" /> , see you soon</li>
+			<li>good bye <get name="username" /></li>
+		</random></template>
 </category>
 </aiml>
