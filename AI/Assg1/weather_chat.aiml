@@ -1,8 +1,19 @@
 <aiml version="1.0.1" encoding="UTF-8">
 
  	
-    
+    <category>
+        <pattern>TEMPERATURE IN *</pattern>
+        <template>
+           temperature <star/>
+        </template>
+    </category>
    
+   <category>
+        <pattern>TEMPERATURE OF *</pattern>
+        <template>
+           temperature <star/>
+        </template>
+    </category>
 	
 	<category>
         <pattern>WHAT * TEMPERATURE IN *</pattern>
@@ -11,8 +22,92 @@
         </template>
     </category>
     
+    <category>
+        <pattern>WHAT * TEMPERATURE OF *</pattern>
+        <template>
+           temperature <star index="2"/>
+        </template>
+    </category>
+    
 	<category>
         <pattern>TEMPERATURE *</pattern>
+        <template>
+           <star index="1"/>
+        </template>
+    </category>
+    
+    
+    
+    
+    
+    <category>
+        <pattern>HUMIDITY IN *</pattern>
+        <template>
+           humidity <star/>
+        </template>
+    </category>
+   
+   <category>
+        <pattern>HUMIDITY OF *</pattern>
+        <template>
+           humidity <star/>
+        </template>
+    </category>
+	
+	<category>
+        <pattern>WHAT * HUMIDITY IN *</pattern>
+        <template>
+           humidity <star index="2"/>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>WHAT * HUMIDITY OF *</pattern>
+        <template>
+           humidity <star index="2"/>
+        </template>
+    </category>
+    
+	<category>
+        <pattern>HUMIDITY *</pattern>
+        <template>
+           <star index="1"/>
+        </template>
+    </category>
+    
+    
+    
+    
+    <category>
+        <pattern>WEATHER IN *</pattern>
+        <template>
+           weather <star/>
+        </template>
+    </category>
+   
+   <category>
+        <pattern>WEATHER OF *</pattern>
+        <template>
+           weather <star/>
+        </template>
+    </category>
+	
+	<category>
+        <pattern>WHAT * WEATHER IN *</pattern>
+        <template>
+           weather <star index="2"/>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>WHAT * WEATHER OF *</pattern>
+        <template>
+           weather <star index="2"/>
+        </template>
+    </category>
+    
+	<category>
+        <pattern>WEATHER *</pattern>
         <template>
            <star index="1"/>
         </template>
