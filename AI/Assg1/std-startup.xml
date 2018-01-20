@@ -13,7 +13,8 @@
         <template>
             <learn>basic_chat.aiml</learn>
             <learn>weather_chat.aiml</learn>
-            <learn>movies.aiml</learn>
+            <learn>cricket_scores.aiml</learn>
+            <learn>bits.aiml</learn>
 
 
             <!-- You can add more aiml files here -->

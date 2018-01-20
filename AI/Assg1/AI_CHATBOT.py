@@ -3,16 +3,27 @@ import requests
 import aiml
 import os
 import json
-from pkg_resources._vendor.pyparsing import empty
-
+import cricbuzz 
 
 kernel = aiml.Kernel()
 API_KEY = "a3550474b09bb6611e2f7269c0bb30ac"
 WEATHER_API_CALL_FAILED = "weather api call failed"
+c = cricbuzz.Cricbuzz()
+matches = c.matches()
+with open('city.list.json') as json_data:
+        cities = json.load(json_data)
+        
 
+def getcityid(cityname):
+    for city in cities:                                                                                                 
+        if cityname.lower() in city['name'].lower():
+            #print city['id'] , city['name'].lower()
+            return city['id']
+        
 # Function definition is here
 def callweatherapi( query ):
-    url = 'http://api.openweathermap.org/data/2.5/weather?q='+query+'&appid='+API_KEY+'&units=metric'
+    id = getcityid(query)
+    url = 'http://api.openweathermap.org/data/2.5/weather?id='+str(id)+'&appid='+API_KEY+'&units=metric'
     response = requests.get(url)
     if(response.status_code == 200):
         x = response.content
@@ -54,6 +65,15 @@ def printweather(answer):
     else :
         return 'Can you be a bit more specific!! I am not able to find city name'
     
+def printcricketscores():
+    for match in matches:    
+        data = json.loads(json.dumps(c.livescore(match['id'])))
+        if data != None :
+            print data['matchinfo']['mchdesc'] + ' (' + data['matchinfo']['status'] +')' + ' (' + data['matchinfo']['srs'] +')'  
+            print data['batting']['team'] + ' -- ' + data['batting']['score'][0]['runs'] + '/' + data['batting']['score'][0]['wickets'] + ' (' + data['batting']['score'][0]['overs'] + ')'
+            print data['bowling']['team'] + ' -- ' + data['bowling']['score'][0]['runs'] + '/' + data['bowling']['score'][0]['wickets'] + ' (' + data['bowling']['score'][0]['overs'] + ')'
+        print '--------------------'
+    
 # Create the kernel and learn AIML files
 kernel = aiml.Kernel()
 if os.path.isfile("bot_brain.brn"):
@@ -77,6 +97,9 @@ while True:
             print "BOT(ANSWER)     >> " + printhumidity(answer)
         elif "weather" in answer:
             print "BOT(ANSWER)     >> " + printweather(answer)
+        elif "cricket" in answer:
+            print "BOT(ANSWER)     >> Below are the cricket scores!!" 
+            printcricketscores()
         elif answer == "":
             continue
         else:
