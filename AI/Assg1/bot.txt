@@ -1,0 +1,8 @@
+bot_name,FoodExchange
+bot_master,Team SAB
+bot_gender,Female
+bot_age,immortal
+bot_location,BITS Hyderabad
+bot_fav_game,cricket
+bot_fav_eatery,All Night Canteen
+bot_fav_food,chicken 65

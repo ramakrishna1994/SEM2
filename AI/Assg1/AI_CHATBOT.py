@@ -4,14 +4,24 @@ import aiml
 import os
 import json
 import cricbuzz 
+import aiml
+import sqlite3
+import datetime
+import time
 
 kernel = aiml.Kernel()
+bot_file = open("bot.txt", "r")
 API_KEY = "a3550474b09bb6611e2f7269c0bb30ac"
 WEATHER_API_CALL_FAILED = "weather api call failed"
 c = cricbuzz.Cricbuzz()
 matches = c.matches()
 with open('city.list.json') as json_data:
         cities = json.load(json_data)
+        
+# Setting Bot properties like name        
+for line in bot_file:
+    k, v = line.split(',')
+    kernel.setBotPredicate(k, v)
         
 
 def getcityid(cityname):
@@ -68,8 +78,8 @@ def printweather(answer):
 def printcricketscores():
     for match in matches:    
         data = json.loads(json.dumps(c.livescore(match['id'])))
-        if data != None :
-            print data['matchinfo']['mchdesc'] + ' (' + data['matchinfo']['status'] +')' + ' (' + data['matchinfo']['srs'] +')'  
+        print data['matchinfo']['mchdesc'] + ' (' + data['matchinfo']['status'] +')' + ' (' + data['matchinfo']['srs'] +')'
+        if data['matchinfo']['mchstate'] != 'preview' :  
             print data['batting']['team'] + ' -- ' + data['batting']['score'][0]['runs'] + '/' + data['batting']['score'][0]['wickets'] + ' (' + data['batting']['score'][0]['overs'] + ')'
             print data['bowling']['team'] + ' -- ' + data['bowling']['score'][0]['runs'] + '/' + data['bowling']['score'][0]['wickets'] + ' (' + data['bowling']['score'][0]['overs'] + ')'
         print '--------------------'
@@ -82,28 +92,65 @@ else:
     kernel.bootstrap(learnFiles = "std-startup.xml", commands = "reload")
     kernel.saveBrain("bot_brain.brn")
 
-# Press CTRL-C to break this loop
+'''
+DB connect code
+'''
+con = sqlite3.connect("test.db")
+cursor = con.cursor()
+
 while True:
-    query = raw_input("HUMAN(QUESTION) >> ")
-    if query == "quit" :
+    # Press CTRL-C to break this loop
+    print "Enter 1.Chat with Bot 2. To see previous conversations 3. To Quit"
+    ch = int(raw_input())
+    
+    if ch == 1:
+        sid = time.time()
+        while True:
+            query = raw_input("HUMAN(QUESTION) >> ")
+            if query == "quit" :
+               break
+            elif query == "save":
+                kernel.saveBrain("bot_brain.brn")
+            else:
+                answer = kernel.respond(query)
+                if "temperature" in answer:
+                    bot_output = printtemperature(answer)
+                    print "BOT(ANSWER)     >> " + bot_output
+                elif "humidity" in answer:
+                    bot_output = printhumidity(answer)
+                    print "BOT(ANSWER)     >> " + bot_output
+                elif "weather" in answer:
+                    bot_output = printweather(answer)
+                    print "BOT(ANSWER)     >> " + bot_output
+                elif "cricket" in answer:
+                    print "BOT(ANSWER)     >> Below are the cricket scores!!"
+                    bot_output = printcricketscores() 
+                elif answer == "":
+                    continue
+                else:
+                    print "BOT(ANSWER)     >> " + answer
+                cursor.execute("INSERT INTO AI VALUES(?, ?, ?)", [sid, query, bot_output])
+                con.commit()
+                
+    
+    elif ch == 2:
+        chat_time = []
+        print "Enter Number to view Chat Log"
+        count = 1
+        for row in cursor.execute("SELECT DISTINCT sid FROM AI"):
+            temp = row[0].decode('utf-8')
+            chat_time.append(temp)
+            print str(count) + ") " + datetime.datetime.strftime(datetime.datetime.fromtimestamp(float(temp)), "%d/%m/%Y %I:%M:%S %p")
+            count += 1
+        opt = int(raw_input())
+        sid = str(chat_time[opt-1])
+        row = cursor.execute("SELECT qstn,ans FROM AI WHERE sid = ?", [sid])
+        for data in row.fetchall():
+            print "Human >> "+data[0]
+            print "Bot >> "+data[1]
+            
+    elif ch == 3:
         exit()
-    elif query == "save":
-        kernel.saveBrain("bot_brain.brn")
-    else:
-        answer = kernel.respond(query)
-        if "temperature" in answer:
-            print "BOT(ANSWER)     >> " + printtemperature(answer)
-        elif "humidity" in answer:
-            print "BOT(ANSWER)     >> " + printhumidity(answer)
-        elif "weather" in answer:
-            print "BOT(ANSWER)     >> " + printweather(answer)
-        elif "cricket" in answer:
-            print "BOT(ANSWER)     >> Below are the cricket scores!!" 
-            printcricketscores()
-        elif answer == "":
-            continue
-        else:
-            print "BOT(ANSWER)     >> " + answer
             
             
             

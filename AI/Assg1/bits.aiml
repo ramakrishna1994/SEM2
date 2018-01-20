@@ -5,12 +5,28 @@
 <!--licence: Standard-->
 <!--created with: GaitoBot AIML Editor V2.10.0.42867-->
 <category>
-	<pattern> * CAFETERIA</pattern>
+	<pattern> CAFETERIA</pattern>
 	<template> tea coffee and snacks .. lunc is also availbale</template>
+</category>
+<category>
+	<pattern> CANAUGHT PLACE </pattern>
+	<template> it is near boys hostel , beside lawn tennis court . you find various shops of books , fruits and vegetables , eatables and gifts present there</template>
+</category>
+<category>
+	<pattern> FULL FORM OF BPHC</pattern>
+	<template>bits pilani hyderabad campus</template>
 </category>
 <category>
 	<pattern> INDIA</pattern>
 	<template>IT IS SOUTH EAST ASIA . IT IS A GREAT COUNTRY . UNITY IN DIVERSITY</template>
+</category>
+<category>
+	<pattern> MORE</pattern>
+	<template><srai><star /> at more</srai></template>
+</category>
+<category>
+	<pattern> SAC</pattern>
+	<template>Student activity center . you have gym and other indoor game facilites such as Table tennis , batminton and pool games</template>
 </category>
 <category>
 	<pattern> TELL ME MORE</pattern>
@@ -21,18 +37,6 @@
 	<template>there is a time table followed for the food in mess based on the day</template>
 </category>
 <category>
-	<pattern>*  IN BITS CAMPUS</pattern>
-	<template>there is accademic block , boys and girls hostels cannaught place  mdedical and various sports field </template>
-</category>
-<category>
-	<pattern>* AT MORE </pattern>
-	<template>you will find processed foods ,raw vegtables and  daily use items </template>
-</category>
-<category>
-	<pattern>* BITS CAMPUSES</pattern>
-	<template><srai>how many places bits is present</srai></template>
-</category>
-<category>
 	<pattern>* BITS FORMED</pattern>
 	<template>1964</template>
 </category>
@@ -41,48 +45,12 @@
 	<template>Well the room at BITS Hyderabad are spacious.You have a Table, a chair, A bed, an almirah, they are well lighted and each room has a window.  They are very much comfortable, and the best part is they are single occupancy rooms.  Have a happy life :)</template>
 </category>
 <category>
-	<pattern>* BITS N BYTES</pattern>
-	<template><srai>where is bits n bytes present</srai></template>
-</category>
-<category>
-	<pattern>* BITS STARTED</pattern>
-	<template>1964</template>
-</category>
-<category>
-	<pattern>* BPHC *</pattern>
+	<pattern>* BPHC</pattern>
 	<template>It was established by Birla Institute of Technology and Science, Pilani (Rajasthan) as one of its latest campuses in the year 2008.The campus is built with state-of-the-art infrastructure without affecting the scenic beauty of the area. Modern laboratories, well-furnished classrooms, lecture theatre complexes, student activity center, auditorium, playground and modern ICT infrastructure, all come together to make BITS Pilani, Hyderabad campus a well-equipped campus. </template>
-</category>
-<category>
-	<pattern>* BREAKFAST</pattern>
-	<template><srai><star /> breakfast <star /></srai></template>
 </category>
 <category>
 	<pattern>* BREAKFAST * </pattern>
 	<template>morning 7 to 9 30 am in mess</template>
-</category>
-<category>
-	<pattern>* C3</pattern>
-	<template>its a eatery .it is near girls hostel</template>
-</category>
-<category>
-	<pattern>* CANAUGHT PLACE </pattern>
-	<template> it is near boys hostel , beside lawn tennis court . you find various shops of books , fruits and vegetables , eatables and gifts present there</template>
-</category>
-<category>
-	<pattern>* CAPITAL OF INDIA </pattern>
-	<template>NEW DELHI</template>
-</category>
-<category>
-	<pattern>* CAPITAL OF TELENGANA</pattern>
-	<template>Hyderabad</template>
-</category>
-<category>
-	<pattern>* DINNER</pattern>
-	<template><srai><star /> dinner <star /></srai></template>
-</category>
-<category>
-	<pattern>* DINNER * </pattern>
-	<template> from 730 pm to 930 pm in mess </template>
 </category>
 <category>
 	<pattern>* EATERIES IN BITS</pattern>
@@ -91,30 +59,6 @@
 <category>
 	<pattern>* FOOD IN BITS </pattern>
 	<template><srai>where you find food in bits campus</srai></template>
-</category>
-<category>
-	<pattern>* FOUNDER CHAIRMAN OF BITS</pattern>
-	<template>Dr. G. D. Birla</template>
-</category>
-<category>
-	<pattern>* FULL FORM OF BPHC</pattern>
-	<template>bits pilani hyderabad campus</template>
-</category>
-<category>
-	<pattern>* IN BITS N BYTES</pattern>
-	<template>we get puffs rolls , pizzas , cakes , donuts </template>
-</category>
-<category>
-	<pattern>* IN C3 </pattern>
-	<template> tea coffe and varoius snacks such as pasteries sanddwiches </template>
-</category>
-<category>
-	<pattern>* IN MORE</pattern>
-	<template><srai><star /> at more</srai></template>
-</category>
-<category>
-	<pattern>* IN NIGHT CANTEEN</pattern>
-	<template><srai>what items we get in night canteen</srai></template>
 </category>
 <category>
 	<pattern>* LEARN IN BITS *</pattern>
@@ -127,10 +71,6 @@
 <category>
 	<pattern>* LUNCH *</pattern>
 	<template>lunch is served at 1130 am to 2 pm in mess</template>
-</category>
-<category>
-	<pattern>* NIGHT CANTEEN *</pattern>
-	<template><srai><star /> of night canteen</srai></template>
 </category>
 <category>
 	<pattern>* OF BITS N BYTES</pattern>
@@ -162,8 +102,68 @@
 	<template><srai>what do you know about bits</srai></template>
 </category>
 <category>
+	<pattern>BITS CAMPUSES</pattern>
+	<template><srai>how many places bits is present</srai></template>
+</category>
+<category>
+	<pattern>BITS N BYTES</pattern>
+	<template>we get puffs rolls , pizzas , cakes , donuts </template>
+</category>
+<category>
+	<pattern>BITS N BYTES</pattern>
+	<template><srai>where is bits n bytes present</srai></template>
+</category>
+<category>
+	<pattern>BITS STARTED</pattern>
+	<template>1964</template>
+</category>
+<category>
+	<pattern>BREAKFAST</pattern>
+	<template><srai><star /> breakfast <star /></srai></template>
+</category>
+<category>
+	<pattern>BREAKFAST IN MESS</pattern>
+	<template>you will get both north and south indian food . you will also get tea and coffee</template>
+</category>
+<category>
+	<pattern>C3</pattern>
+	<template>its a eatery .it is near girls hostel</template>
+</category>
+<category>
+	<pattern>C3 </pattern>
+	<template> tea coffe and varoius snacks such as pasteries sanddwiches </template>
+</category>
+<category>
+	<pattern>CAPITAL OF INDIA </pattern>
+	<template>NEW DELHI</template>
+</category>
+<category>
+	<pattern>CAPITAL OF TELENGANA</pattern>
+	<template>Hyderabad</template>
+</category>
+<category>
 	<pattern>CHITRANJAN HOTA</pattern>
 	<template>faculty of comp science , teaching us Artificial intelligence</template>
+</category>
+<category>
+	<pattern>CHITRANJAN HOTA</pattern>
+	<template>Professor in BPHC . Teaches us AI . He believes in imparting practical knowledge rathar than theorotical knowlege</template>
+</category>
+<category>
+	<pattern>COFFEE</pattern>
+	<template><srai>coffee in bits</srai></template>
+</category>
+<category>
+	<pattern>COFFEE IN BITS</pattern>
+	<template>in mess , bits n bytes and c3</template>
+</category>
+<category>
+	<pattern>DINNER</pattern>
+	<template><srai><star /> dinner <star /></srai></template>
+</category>
+<category>
+	<pattern>DINNER * </pattern>
+	<template> from 730 pm to 930 pm in mess </template>
 </category>
 <category>
 	<pattern>DIRECTOR OF BITS</pattern>
@@ -176,6 +176,18 @@
 <category>
 	<pattern>DO YOU KNOW ABOUT *</pattern>
 	<template><star /></template>
+</category>
+<category>
+	<pattern>DO YOU THINK *</pattern>
+	<template><srai><star /></srai></template>
+</category>
+<category>
+	<pattern>DOSA IN BITS</pattern>
+	<template>cafeteria ,mess </template>
+</category>
+<category>
+	<pattern>FOUNDER CHAIRMAN OF BITS</pattern>
+	<template>Dr. G. D. Birla</template>
 </category>
 <category>
 	<pattern>HELLO</pattern>
@@ -194,6 +206,22 @@
 	<template><srai>HI</srai></template>
 </category>
 <category>
+	<pattern>HOD OF COMPUTER SCIENCE </pattern>
+	<template><srai><star /></srai></template>
+</category>
+<category>
+	<pattern>HOD OF COMPUTER SCIENCE AND INFORMATION SECURITY</pattern>
+	<template><srai><star /></srai></template>
+</category>
+<category>
+	<pattern>HOD OF CSIS DEPARTMENT</pattern>
+	<template>Prof Tathagata Ray</template>
+</category>
+<category>
+	<pattern>HOW ARE *</pattern>
+	<template><srai><star /></srai></template>
+</category>
+<category>
 	<pattern>HOW IS *</pattern>
 	<template><star /> is good </template>
 </category>
@@ -206,20 +234,48 @@
 	<template>there are 4 places Pilani , Goa , Hyderabad and Dubai</template>
 </category>
 <category>
+	<pattern>IN BITS CAMPUS</pattern>
+	<template>there is accademic block , boys and girls hostels cannaught place  mdedical and various sports field </template>
+</category>
+<category>
 	<pattern>MORE</pattern>
 	<template>Super market in caunaught place.</template>
+</category>
+<category>
+	<pattern>MORE </pattern>
+	<template>you will find processed foods ,raw vegtables and  daily use items </template>
 </category>
 <category>
 	<pattern>MY NAME IS *</pattern>
 	<template>YOU HAVE A NICE NAME <set name="username"><star /></set>. </template>
 </category>
 <category>
+	<pattern>NIGHT CANTEEN</pattern>
+	<template><srai>what items we get in night canteen</srai></template>
+</category>
+<category>
+	<pattern>NIGHT CANTEEN </pattern>
+	<template><srai><star /> of night canteen</srai></template>
+</category>
+<category>
+	<pattern>PROFESSORS IN BITS</pattern>
+	<template>they are awesome</template>
+</category>
+<category>
 	<pattern>REPEAT MY NAME</pattern>
 	<template><condition name="UserName" value="Unknown">you didnt tell your name</condition> <condition name="Username" value="&lt;get name=&quot;UserName&quot;&gt;" /><get name="UserName" /></template>
 </category>
 <category>
+	<pattern>SPORTS FACILITIES IN BITS </pattern>
+	<template>cricket field , hockey field , football field and basketball , volleyball , batminton courts .</template>
+</category>
+<category>
 	<pattern>TARGET BOTSTART</pattern>
 	<template>This is the greeting of a GaitoBot conversation.</template>
+</category>
+<category>
+	<pattern>TEACHERS IN BITS </pattern>
+	<template>they are excellent</template>
 </category>
 <category>
 	<pattern>TELL ABOUT *</pattern>
@@ -230,20 +286,60 @@
 	<template>Prof. Souvik Bhattacharyya is the VC . his contact details are  vc@pilani.bits-pilani.ac.in</template>
 </category>
 <category>
+	<pattern>WATSUP</pattern>
+	<template><srai>Hi</srai></template>
+</category>
+<category>
+	<pattern>WHAT ARE *</pattern>
+	<template><srai><star /></srai></template>
+</category>
+<category>
 	<pattern>WHAT ARE MESS TIMINGS </pattern>
 	<template>breakfast from 0700 to 0930 hrs , lunch from 1130 hrs to 1400 hrs and dinner from  1930 hrs to 2130 hrs</template>
+</category>
+<category>
+	<pattern>WHAT DID YOU *</pattern>
+	<template><srai><star /></srai></template>
 </category>
 <category>
 	<pattern>WHAT DID YOU LEARN AT BITS</pattern>
 	<template>in one word Everything</template>
 </category>
 <category>
+	<pattern>WHAT DO YOU FIND AT *</pattern>
+	<template><srai><star /></srai></template>
+</category>
+<category>
+	<pattern>WHAT DO YOU FIND IN *</pattern>
+	<template><srai><star /></srai></template>
+</category>
+<category>
+	<pattern>WHAT DO YOU KNOW ABOUT *</pattern>
+	<template><srai><star /></srai></template>
+</category>
+<category>
 	<pattern>WHAT DO YOU KNOW ABOUT BITS</pattern>
 	<template>it is best private college in india</template>
 </category>
 <category>
+	<pattern>WHAT HAPPENS IN *</pattern>
+	<template><srai><star /></srai></template>
+</category>
+<category>
 	<pattern>WHAT IS *</pattern>
 	<template><srai><star /></srai></template>
+</category>
+<category>
+	<pattern>WHAT IS BEST IN BITS N BYTES</pattern>
+	<template>Everything</template>
+</category>
+<category>
+	<pattern>WHAT IS COFFEE</pattern>
+	<template>its a beverage</template>
+</category>
+<category>
+	<pattern>WHAT IS TEA</pattern>
+	<template>its a beverage </template>
 </category>
 <category>
 	<pattern>WHAT IS THE LOCATION OF BITS </pattern>
@@ -278,15 +374,35 @@
 	<template>it is present in two location , near footfield and one in cannaught place</template>
 </category>
 <category>
+	<pattern>WHERE WILL YOU FIND *</pattern>
+	<template><srai><star /></srai></template>
+</category>
+<category>
+	<pattern>WHERE WILL YOU GET *</pattern>
+	<template><srai><star /></srai></template>
+</category>
+<category>
 	<pattern>WHERE YOU FIND FOOD IN BITS CAMPUS </pattern>
 	<template>there are 2 mess . apart from that bits n bytes and yumpys , a cafeteria in academic block and C3 near girls hostel</template>
+</category>
+<category>
+	<pattern>WHO IS *</pattern>
+	<template><srai><star /></srai></template>
 </category>
 <category>
 	<pattern>WHO IS *</pattern>
 	<template><star /></template>
 </category>
 <category>
-	<pattern>WHO IS *</pattern>
+	<pattern>WHO TEACHES AI </pattern>
+	<template>Prof Chitranjan hota</template>
+</category>
+<category>
+	<pattern>WHO TEACHES ARTIFICIAL INTELLIGENCE</pattern>
+	<template><srai>who teaches ai</srai></template>
+</category>
+<category>
+	<pattern>WOULD YOU MIND *</pattern>
 	<template><srai><star /></srai></template>
 </category>
 </aiml>
