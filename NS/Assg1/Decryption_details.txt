@@ -1,0 +1,39 @@
+a b c d e f g
+
+h i j k l m n
+
+o p q r s t u
+
+v w x y z
+
+                                Q d a r z e s Y l | r f k n k Y w o n | i v c a j d c u q
+                                Q d a r z e s Y l | s g l o l Z x p o | k x e c l f e w s
+plaintext                     : m a u r i c e v i | n c e n t w i l k | e s w a s b o r n | j u n e i n D u d | l e y i n t h e c o u n t y o f S t a f f o r d s h i r e i n t h e E n g l i s h M i d l a n d s
+key                           : e d g a r c o d d | e d g a r c o d d | e d g a r c o d d | e d g a r c o d d | e d
+Vignere Cipher After Key      : q d a r z e s y l | r f k n k y w o n | i v c A J D C U Q | N X T E Z P R X G | P H
+After shift by 0,1,2,....     : q d a r z e s y l | s g l o l z x p o | k x e a j d c u q |  
+Given Cipher(Vignere + shift) : Q d a r z e s Y l | s g l o l Z x p o | k x e c l f e w s | Q a | w h c s U a j t l | i m i z z l j x c y y u v y A b k o r u o l m q r c o v u r q z O x s w w a g W e o w n z s b
+
+
+				Q D A R Z E S Y L | R F K N K Y W O N | I V C A J D C U Q | N>TE@PR>GP
+
+Vignerecipherafter plain      : M A U R I C E V I | O D F O U X J M L | G U Y C U D Q T P M X | Q H L Q G X G P I C M R X L I G T Z S Y D T K X Y G L L U X J Y N O Y LPUAOLLUOTQAPUQLTJWMBQRBOJDROBGKCKPTYLYNTLWZRRUOQDRADGURRFGNGRCTHVSSOFZDUSJS
+4 3 6 0 1 2 1 3 3 | 5 4 7 1 1 3 1 4 4 6 | 5 8 2 3 1 1 5 5 5 6 | 9 3 2 5 1 6 6 8 7 |  
+        7   4               8   5                 9 6               0   7
+
+
+e d g a r c o d d 
+
+
+
+https://amturing.acm.org/award_winners/wilkes_1001395.cfm
+
+VIODFOUXJMLGUYCUDQTPMX
+vincentWILKESwasbornju
+0011111111122222222233
+
+
+
+
+
+

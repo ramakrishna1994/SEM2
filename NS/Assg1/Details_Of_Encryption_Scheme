@@ -1,0 +1,50 @@
+Details Of Encryption Scheme
+
+Steps performed in encryption are given as below.
+
+Assuming key as "EDGARCODD" and plain text as "MauriceVincent"
+
+Step-1 : Applying Vignere Cipher Encryption Procedure using given key.
+            Key is repeated until it matches with the length of plain text
+
+            a) From the plain text all the special characters and numbers will
+                be removed.
+            b) All the small letters are converted into capital letters.
+            c) Now key will be repeated to match the length of plain text.
+            d) Vignere Cipher Encryption procedure is applied.
+            e) All the characters which were previously converted to capital
+                will be converted back to small letters.
+
+          (PLAIN TEXT  AFTER
+          REMOVING SPECIAL
+          CHARACTERS AND NUMBERS)   : MauriceVincent..........
+          CAPITAL CONVERSION        : MAURICEVINCENT..........
+          KEY (REPEATED)            : EDGARCODDEDGAR..........
+          VIGNERE CIPHER TEXT       : QDARZESYLRFKNK..........
+          SMALL CONVERSION          : QdarzesYlrfknk..........
+
+         Vignere cipher encryption procedure only works with capital letters. So any
+         small letter encountered will be converted to capital first , then encrypted
+         and then converted to small again.
+
+Step-2 : Now applying Shift cipher procedure which shifts the Vignere cipher by 0,1,2,3...
+            in lengths of key.In this case in lengths of 9.
+
+            a) The output from the first step is taken and the characters in the cipher are
+                shifted forward (Addition) by 0,1,2,3 in lengths of 9 as given below.
+            b) Shift cipher encryption procedure is applied and final cipher is obtained.
+            c) All the special characters and numbers which were removed previously will be
+                added back.
+
+           SMALL CIPHER TEXT        : QdarzesYlrfknk..........
+           SHIFT CIPHER             : 00000000011111.......... (ADDITION)
+           (FINAL CIPHER TEXT
+           With SPECIAL CHARACTERS
+           AND NUMBERS)             : QdarzesYlsglol..........
+
+Step-3 : Now the final cipher text is encrypted using h20171030081 public key.
+
+
+
+
+
