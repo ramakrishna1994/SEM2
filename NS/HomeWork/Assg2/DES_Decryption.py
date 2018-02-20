@@ -46,12 +46,10 @@ def returnPadding():
     padding = str("0000110100001010") + binString;
     return padding
 
-curPos = 0;
+
 
 generateKeysAndStore()
 while fullCipherBitVectors.more_to_read:
-    keyBitVector_56_Bit = keyBitVector_64_Bits.permute(PC_1_ORIGINAL_MODIFIED)
-    [leftKeyBitVector_28_Bits, rightKeyBitVector_28_Bits] = keyBitVector_56_Bit.divide_into_two()
     singleCipherBitVector_64_Bits = fullCipherBitVectors.read_bits_from_file(64)
     lenOfCipherText = len(singleCipherBitVector_64_Bits)
     permutedSingleCipherBitVector_64_Bits = singleCipherBitVector_64_Bits.permute(INITIAL_PERMUTATION_64_BITS_MODIFIED)
@@ -67,7 +65,7 @@ while fullCipherBitVectors.more_to_read:
     finalMessageBitVector_64_Bits = reversedMessageBitVector_64_Bits.permute(INVERSE_INITIAL_PERMUTATION_64_BITS_MODIFIED)
     cipherTextInAscii = finalMessageBitVector_64_Bits.get_bitvector_in_ascii()
     finalCipherTextInASCII += cipherTextInAscii
-    curPos += 8
+
 
 print "+++++++++++++++++++++ Final Full Plain Text ASCII Representation ++++++++++++++++++++++++++++++++++++++++++++"
 print finalCipherTextInASCII
